@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Keep Training</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_training">Training</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="triceps">Tríceps</string>
+    <string name="peito">Peito</string>
+    <string name="ex_stiff">Ex: Stiff</string>
+    <string name="perna">Perna</string>
+    <string name="biceps">Bíceps</string>
+    <string name="costas">Costas</string>
+    <string name="registro_de_treino">Registro de treino</string>
 </resources>
