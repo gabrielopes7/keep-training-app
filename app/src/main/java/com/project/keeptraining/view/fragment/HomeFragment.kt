@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.project.keeptraining.databinding.FragmentHomeBinding
-import com.project.keeptraining.modelview.HomeViewModel
+import com.project.keeptraining.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
 

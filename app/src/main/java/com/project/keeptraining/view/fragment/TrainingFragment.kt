@@ -8,12 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import androidx.core.widget.addTextChangedListener
+import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.project.keeptraining.databinding.FragmentTrainingBinding
-import com.project.keeptraining.modelview.TrainingViewModel
+import com.project.keeptraining.model.enum.GrupoMuscularEnum
+import com.project.keeptraining.viewmodel.TreinoViewModel.TreinoViewModel
 
 class TrainingFragment : Fragment() {
 
@@ -27,7 +27,7 @@ class TrainingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val trainingViewModel =
-            ViewModelProvider(this).get(TrainingViewModel::class.java)
+            ViewModelProvider(this).get(TreinoViewModel::class.java)
 
         _binding = FragmentTrainingBinding.inflate(inflater, container, false)
 
@@ -35,6 +35,7 @@ class TrainingFragment : Fragment() {
 
         val inputExercicio: EditText = binding.inptExercicio
         val inputPeso: EditText = binding.inptPeso
+        val radioGroup: RadioGroup = binding.radioGroup
         val btnRegistrar: Button = binding.btnRegistrar
 
         trainingViewModel.valueExercicio.observe(viewLifecycleOwner){ value ->
@@ -45,6 +46,26 @@ class TrainingFragment : Fragment() {
         trainingViewModel.valuePeso.observe(viewLifecycleOwner){ value ->
             if(inputPeso.text.toString() != value)
                 inputPeso.setText(value)
+        }
+
+        trainingViewModel.radioSelect.observe(viewLifecycleOwner) { value ->
+            if(radioGroup.checkedRadioButtonId != value)
+                radioGroup.check(value)
+        }
+
+        radioGroup.setOnCheckedChangeListener{group, checkedInt ->
+            trainingViewModel.setarSelectedGrupoMuscular(checkedInt)
+
+            if(GrupoMuscularEnum.PEITO.IdGrupoMuscular == checkedInt)
+                trainingViewModel.setarNomeGrupoMuscular("Peito");
+            else if(GrupoMuscularEnum.COSTAS.IdGrupoMuscular == checkedInt)
+                trainingViewModel.setarNomeGrupoMuscular("Costas")
+            else if(GrupoMuscularEnum.PERNA.IdGrupoMuscular == checkedInt)
+                trainingViewModel.setarNomeGrupoMuscular("Perna")
+            else if(GrupoMuscularEnum.BICEPS.IdGrupoMuscular == checkedInt)
+                trainingViewModel.setarNomeGrupoMuscular("Bíceps")
+            else if(GrupoMuscularEnum.TRICEPS.IdGrupoMuscular == checkedInt)
+                trainingViewModel.setarNomeGrupoMuscular("Tríceps")
         }
 
         inputExercicio.addTextChangedListener(object: TextWatcher{

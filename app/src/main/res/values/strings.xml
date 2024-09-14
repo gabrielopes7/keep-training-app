@@ -4,11 +4,15 @@
     <string name="title_home">Home</string>
     <string name="title_training">Training</string>
     <string name="title_notifications">Notifications</string>
-    <string name="triceps">Tríceps</string>
-    <string name="peito">Peito</string>
+    <string name="triceps">Grupo muscular - Tríceps</string>
+    <string name="peito">Grupo muscular - Peito</string>
     <string name="ex_stiff">Ex: Stiff</string>
-    <string name="perna">Perna</string>
-    <string name="biceps">Bíceps</string>
-    <string name="costas">Costas</string>
+    <string name="perna">Grupo muscular - Perna</string>
+    <string name="biceps">Grupo muscular - Bíceps</string>
+    <string name="costas">Grupo muscular - Costas</string>
     <string name="registro_de_treino">Registro de treino</string>
+    <string name="exercicio">Exercício:</string>
+    <string name="ex_33">Ex: 33</string>
+    <string name="peso">Peso:</string>
+    <string name="registrar_exerc_cio">Registrar exercício</string>
 </resources>
